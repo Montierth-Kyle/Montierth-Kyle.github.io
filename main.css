@@ -1,91 +1,386 @@
-html,
+/********************************
+* Default Styles - Mobile First
+********************************/
 body {
+	font-family: Impact, sans-serif;
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+    background-color: darkgrey;
+}
+
+body,
+caption,
+th,
+td,
+input,
+textarea,
+select,
+option,
+legend,
+fieldset,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size-adjust: 0.5;
+}
+
+.wrapper {
 	display: flex;
-	line-height: 1.5;
-	min-height: auto;
-	font-weight: 300;
-	min-width: 100%;
+	flex-flow: column;
+	flex-wrap: wrap;
+	padding: .5em;
+    background-color: darkgrey;
+}
+
+.wrapper img {
+	width: 100%;
+	height: auto;
+}
+
+h1 {
+	font-size: 1.05em;
+    font-family: Impact, Charcoal, sans-serif;
+	/*	line-height: 1.25;*/
+}
+
+
+/*******************************
+* Page Header Styles
+* Background Image
+*******************************/
+
+
+/*	Background Images - use with Small screens */
+
+.page-header {
+	width: 100%;
+
+}
+
+
+/*******************************
+* Page Navigation Styles
+*******************************/
+
+.page-nav {
+	background: linear-gradient(to bottom, #003399 0%, #ffffff 141%);
+	position: relative;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
 }
 
 .page-nav ul {
+	display: flex;
+    height: 3em;
+	margin: 0;
+	padding: 0;
 	list-style: none;
-	position: center;
 }
+
+.page-nav li {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+    color: white;
+    border: none;
+    padding: 0px 0px;
+}
+.page-nav a {
+	text-decoration: none;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    font-family: sans-serif;
+    flex: 1;
+}
+.page-nav ul li.active a {
+    background: linear-gradient(to bottom, #ffffff -41%, #003399 100%);
+}
+
+
+/********************************
+* Main Content Styles
+********************************/
 
 .main {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	padding: 0px 0;
-	margin-top: 0;
-	margin-bottom: 0;
-	font-family: 'Trebuchet MS', Helvetica, sans-serif;
-	background-color: black;
-	background-size: cover;
-	color: ghostwhite;
+	font-size: 1em;
+	line-height: 1.25;
+	margin: 0;
+	position: relative;
+    background-color: white;
+}
+.main strong {
+    font-weight: bolder;
+}
+.featured-image {
+	margin: 1em 1em;
 }
 
-.main a {
-	color: white;
-	font-size: 1.25em;
-	text-decoration: none;
-	text-align: center;
-}
-
-.main img {
+.featured-image img {
+	display: flex;
 	height: auto;
-	width: 100%;
-	display: block;
+    width: 80%;
+    float: left;
+}
+.featured-image iframe{
+    padding: 0;
+    margin: 0;
+}
+aside.right {
+		width: 33.3%;
+        flex-wrap: wrap;
+
+	}
+ aside.right2 {
+		width: 33.3%;
+     flex-wrap: wrap;
+
+	}
+.subButton {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background: linear-gradient(to bottom, #003399 0%, #ffffff 141%);
+  border: none;
+  border-radius: 5px;
+
 }
 
-@media (min-device-width: 750px) {
-	html,
-	body {
-		min-height: 100%;
-		min-width: 100%;
-		display: flex;
-		flex-direction: column;
-		font-weight: 300;
-		line-height: 1.5;
+.subButton:hover {background: linear-gradient(to bottom, #ffffff -41%, #003399 100%);}
+
+.subButton:active {
+  background: linear-gradient(to bottom, #ffffff -41%, #003399 100%);;
+  transform: translateY(4px);
 	}
-	.page-nav ul {
-		display: flex;
-		align-items: stretch;
-		height: 2.5em;
-		margin: 0;
-		padding: 0;
-		list-style: none;
+
+.image-caption {
+	padding: .25em 1em;
+	font-family: sans-serif;
+	font-size: 80%;
+	background: darkgrey;
+    float: left;
+
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    display: flex;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 0;
+}
+
+tr {
+    background-color: white;
+}
+
+video {
+    display: flex;
+    width: 100%;
+}
+
+/*******************************
+* Page Footer Styles
+*******************************/
+
+.page-footer {
+	color: #fff;
+	padding: 0 .5em;
+	margin-bottom: 2.5em;
+    background: linear-gradient(to bottom, #ffffff -41%, #003399 100%);
+}
+
+.page-footer ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.page-footer li {
+	flex: auto;
+}
+
+.page-footer a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+}
+
+.page-footer p {
+	margin: 0;
+}
+
+.credits {
+	font-size: .8em;
+}
+
+@media (min-width: 320px) {
+
+    aside.right2 {
+	display: none;
+
+	}
+    .featured-image iframe{
+        width: 100%;
+        display: flex;
+        padding: 0;
+    }
+
+aside.right {
+		width: 18%;
+        flex-wrap: wrap;
+
+	}
+    .page-nav ul {
+        display: flex;
+        width: 100%;
+    }
+.page-nav li {
+    display: flex;
+    margin: 0 2px 0 2px;
+    width: 100%
+}
+    .page-nav a {
+font-size: 15px;
+    }
+    .featured-image table{
+        display: flex;
+        width: 100%;
+    }
+
+}
+/********************************
+* Medium Screen Styles
+* 750px viewport / 18px font = 41.67em
+********************************/
+
+@media (min-width: 41.67em) {
+	body {
+		font-size: 1.25em;
+	}
+	h1 {
+		font-size: 2em;
+		line-height: 1.125;
+	}
+	/*	Background Images - Use with medium screens */
+	.page-header {
+		width: 100%;
+	}
+	.page-nav {
+		position: relative;
 	}
 	.page-nav li {
 		flex: 1;
-		display: flex;
-		justify-content: center;
+	}
+    .page-nav ul li.active a {
+    background: linear-gradient(to bottom, #ffffff -41%, #003399 100%);
+}
+
+	.main {
+		line-height: 1.375;
+        min-width: 80%;
+        max-width: 100%;
+		padding-right: .5em;
+		padding-left: .5em;
+        padding-bottom: .5em;
+	}
+    aside.right {
+		width: 33.3%;
+        flex-wrap: wrap;
+        float: left;
+    }
+     aside.right2 {
+		display: none;
+
+	}
+	.featured-image {
+		margin: 0 1em 1em 0;
+		float: left;
+		width: 50%;
+	}
+	.page-footer {
+		margin-bottom: .5em;
+	}
+}
+
+
+/********************************
+* Large Screen Styles
+* 1200px viewport / 18px font = 66.7em
+********************************/
+
+@media (min-width: 66.7em) {
+	body {
+		font-size: 1.5vw;
+	}
+	h1 {
+		font-size: 3em;
+		line-height: 1.05;
+	}
+	/*	Background Images - Use with large screens */
+	.page-header {
+		width: 100%;
+	}
+	.page-nav li {
+		flex: 1;
+	}
+    .page-nav ul li.active a {
+    background: linear-gradient(to bottom, #ffffff -41%, #003399 100%);
+}
+
+    aside.right {
+		width: 33.3%;
+        flex-wrap: wrap;
+        float: left;
+
+	}
+     aside.right2 {
+		width: 33.3%;
+        flex-wrap: wrap;
+        float: left;
+
 	}
 	.main {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		padding: 0px 0;
-		font-family: 'Trebuchet MS', Helvetica, sans-serif;
-		background-color: black;
-		background-size: cover;
-		margin-top: 0;
-		margin-bottom: 0;
-		color: ghostwhite;
-		min-width: 100%;
+		max-width: 100%;
+		padding-right: .5em;
+		padding-left: .5em;
 	}
-	.main a {
-		color: white;
-		font-size: 1.25em;
-		text-decoration: none;
-	}
-	.main img {
-		height: auto;
-		width: 100%;
-		display: flex;
+    .subButton {
+  display: inline-block;
+  padding: 15px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background: linear-gradient(to bottom, #003399 0%, #ffffff 141%);
+  border: none;
+  border-radius: 15px;
+
+}
+
+.subButton:hover {background: linear-gradient(to bottom, #ffffff -41%, #003399 100%);}
+
+.subButton:active {
+  background: linear-gradient(to bottom, #ffffff -41%, #003399 100%);;
+  transform: translateY(4px);
 	}
 }

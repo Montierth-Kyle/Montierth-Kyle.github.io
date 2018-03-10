@@ -1,45 +1,69 @@
-<!DOCTYPE HTML>
-<html lang="en-us">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="description" content="A start of a wonderful thing!">
-	<meta name="viewport" content="width=device-width, initial-scale= 1">
-	<meta name="format-detection" content="telephone=yes" />
-	<meta name="robots" content="noindex, nofollow">
-	<title>C0d1ng w/ Kyle</title>
-	<link rel="stylesheet" type="text/css" href="main.css" />
+    <meta charset="utf-8">
+    <title>About Me </title>
+    <meta name="viewport" content="width=device-width">
+    <link href='main.css' rel='stylesheet' type='text/css'>
+
+    <script src="jquery-3.x.min.js"></script>
+
 </head>
 
 <body>
-	<div class="main">
-		<header>
-			<h1 style="text-align: center;">C0d1ng w/ Kyle</h1>
-			<p></p>
-			<nav class="page-nav">
-				<ul>
-					<li><a href="loops.html">Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</a></li>
+    <div class="wrapper">
+        <header class="page-header">
+            <a href="index.html"><img src="images/red_dead.png" alt="banner"></a>
+        </header>
+        <nav class="page-nav">
+            <ul id="mainmenu">
+  					<li><a href="loops.html">Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</a></li>
 
-					<li><a href="object.html">Object Creation Functions, Inheritance, Properties, Methods, Instantiation</a></li>
+  					<li><a href="object.html">Object Creation Functions, Inheritance, Properties, Methods, Instantiation</a></li>
 
-					<li><a href="string.html">JSON Parse, Stringify</a></li>
-					<li><a href="xmlhttp.html">Using XMLHTTPRequest to Consume a JSON Web Service</a></li>
-					<li><a href="storing.html">Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</a></li>
-          <li><a href="dommanipulate.html">DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</a></li>
-					<li><a href="cssmanipulate.html">Manipulating CSS Class Properties Using JavaScript</a></li>
-					<li><a href="csstrans.html">Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</a></li>
-					<li><a href="jsevents.html">Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</a></li>
-					<li><a href="tags.html">HTML5 Tags - Video, Audio, and Canvas</a></li>
-					<li><a href="custom.html">Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library)</a></li>
-						<img src="images/red_dead.png" alt="red_dead">
-				</ul>
-			</nav>
+  					<li><a href="string.html">JSON Parse, Stringify</a></li>
+  					<li><a href="xmlhttp.html">Using XMLHTTPRequest to Consume a JSON Web Service</a></li>
+  					<li><a href="storing.html">Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</a></li>
+            <li><a href="dommanipulate.html">DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</a></li>
+  					<li><a href="cssmanipulate.html">Manipulating CSS Class Properties Using JavaScript</a></li>
+  					<li><a href="csstrans.html">Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</a></li>
+  					<li><a href="jsevents.html">Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</a></li>
+  					<li><a href="tags.html">HTML5 Tags - Video, Audio, and Canvas</a></li>
+  					<li><a href="custom.html">Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library)</a></li>
 
-			<div id="outputDiv"></div>
-		</header>
-	</div>
-    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-    <script src="js/jquery-3.x.min.js"></script>
+  				</ul>
+        </nav>
+        <main class="main">
+            <h1 style="text-align:center" class="main-title">Welcome!</h1>
+        </main>
+        <footer class="page-footer">
+            <ul>
+                <li>© Kyle Montierth</li>
+            </ul>
+            <p>Last Updated: March 2018</p>
+        </footer>
+
+    </div>
 </body>
+<script>
+    //remember to add an ID of "mainmenu" to the nav ul
+    var urlString = document.location.href;
+    var urlArray = urlString.split('/');
+    var pageHREF = urlArray[urlArray.length - 1];
+
+    if (pageHREF !== "") {
+        var menu = document.querySelectorAll('ul#mainmenu li a');
+        var i;
+        //loop through all the menu items in the navigation
+        for (i = 0; i < menu.length; i++) {
+            var currentURL = (menu[i].getAttribute("href"));
+            menu[i].parentNode.className = ""; //turn off hilighting by default
+            if (currentURL === pageHREF) {
+                menu[i].parentNode.className = "active"; //turn on if a match
+            } // end if
+        } // end of the search for a match
+    } // end of if !==
+</script>
 
 </html>
