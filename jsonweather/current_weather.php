@@ -6,7 +6,7 @@
 	<title>Ogden, UT</title>
 	<meta name="viewport" content="width=device-width">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="stylesheet" href="/jsonweather/css/weather_style.css" type="text/css">
+	<link rel="stylesheet" href="weather_style.css" type="text/css">
     <script src="/jsonweather/scripts/remote_wu.js"></script>
     <script src="/jsonweather/scripts/jquery-3.x.min.js"></script>
     <script src="/jsonweather/scripts/weather.json"></script>
