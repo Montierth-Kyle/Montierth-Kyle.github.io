@@ -6,10 +6,10 @@
 	<title>Ogden, UT</title>
 	<meta name="viewport" content="width=device-width">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="stylesheet" href="weather_style.css" type="text/css">
-    <script src="/jsonweather/scripts/remote_wu.js"></script>
-    <script src="/jsonweather/scripts/jquery-3.x.min.js"></script>
-    <script src="/jsonweather/scripts/weather.json"></script>
+	<link rel="stylesheet" href="/css/weather_style.css" type="text/css">
+    <script src="/scripts/remote_wu.js"></script>
+    <script src="/scripts/jquery-3.x.min.js"></script>
+    <script src="/scripts/weather.json"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
  <script>
 jQuery(document).ready(function($) {
@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
   var feelslike_f = parsed_json['current_observation']['feelslike_f'];
   var precip = parsed_json['current_observation']['precip_today_in'];
   var wind = parsed_json['current_observation']['windchill_f'];
-  
+
   document.getElementById('currentTemp').innerHTML =  temp_f.toFixed(0) + "°";
   document.getElementById('current_conditions').innerHTML =  weather;
   document.getElementById('cityDisplay').innerHTML = location + ", " + state;
@@ -37,14 +37,6 @@ jQuery(document).ready(function($) {
 });
 </script>
 </head>
-<!-- *********************************************
-* Who Did You Collaborate With On This Assessment?
-* 1. Kyle Montierth
-* 2. Zane Pace
-* 3. Kimberlee Curtiss
-* 4. Jeff Bryant
-* 5.
-* ******************************************** -->
 <body>
 	<div id="wrapper">
 		<header id="page-header">
@@ -72,8 +64,8 @@ jQuery(document).ready(function($) {
 			<?  php include '_footer.php';  ?>
 			<small>Last updated: <?php echo date('j F, Y', getlastmod()); ?></small>
 		</footer>
-		<script src="/jsonweather/scripts/jquery-2.2.0.min.js"></script>
-		<script src="/jsonweather/scripts/remote_wu.js"></script>
+		<script src="/scripts/jquery-2.2.0.min.js"></script>
+		<script src="/scripts/remote_wu.js"></script>
 	</div>
 </body>
 
