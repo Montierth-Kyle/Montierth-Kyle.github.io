@@ -11,7 +11,7 @@ body {
 h1 {
     font-family: fantasy;
     text-align: center;
-    color: white;
+    color: black;
     text-shadow: 3px 3px black;
 }
 
@@ -21,5 +21,5 @@ input {
 
 #output {
     padding-top: 125px;
-    color: white;
+    color: black;
 }
