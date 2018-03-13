@@ -40,16 +40,10 @@ jQuery(document).ready(function($) {
 <body>
 	<div id="wrapper">
 		<header id="page-header">
-			<h1>Weather Center</h1>
-<h2 class="tagline">Know your weather</h2>
+			<?php include '_header.php'; ?>
 		</header>
 		<nav id="page-nav">
-			<ul class="flexlist">
-	<li><a href="../jsonweather/current_weather.html" title="Weather Center Current Location">Current</a></li>
-	<li><a href="../jsonweather/views/franklin.php" title="Weather in Franklin, ID">Franklin</a></li>
-	<li><a href="../jsonweather/views/greenville.php" title="Weather in Greenville, SC">Greenville</a></li>
-	<li><a href="../jsonweather/views/springfield.php" title="Weather in Springfield, IL">Springfield</a></li>
-</ul>
+			<?php include '_navigation.php'; ?>
 		</nav>
 		<main id="page-main">
 			<section class="weather-container">
@@ -67,11 +61,8 @@ jQuery(document).ready(function($) {
 			</section>
 		</main>
 		<footer id="page-footer">
-			<ul class="flexlist">
-	<li>Weather Center 2010 -2017</li>
-	<li><img src="../jsonweather/images/wulogo_rev.png" alt="Weatherunderground logo" title="All weather data provided by WeatherUnderground.com"></li>
-</ul>
-			<small>Last updated: 2 seconds ago</small>
+			<?  php include '_footer.php';  ?>
+			<small>Last updated: <?php echo date('j F, Y', getlastmod()); ?></small>
 		</footer>
 		<script src="../jsonweather/scripts/jquery-2.2.0.min.js"></script>
 		<script src="../jsonweather/scripts/remote_wu.js"></script>
