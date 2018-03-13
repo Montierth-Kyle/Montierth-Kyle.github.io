@@ -6,6 +6,34 @@
     <title>JSON Parse</title>
     <meta name="viewport" content="width=device-width">
     <link href='main.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="weather_style.css" type="text/css">
+    <script src="/jsonweather/scripts/remote_wu.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script>
+   jQuery(document).ready(function($) {
+     $.ajax({
+     url : "http://api.wunderground.com/api/c8369bfc569b1c27/geolookup/forecast/conditions/q/autoip.json",
+     dataType : "jsonp",
+     success : function(parsed_json) {
+     var location = parsed_json['location']['city'];
+     var state = parsed_json['location']['state'];
+     var temp_f = parsed_json['current_observation']['temp_f'];
+     var weather = parsed_json['current_observation']['weather'];
+     var feelslike_f = parsed_json['current_observation']['feelslike_f'];
+     var precip = parsed_json['current_observation']['precip_today_in'];
+     var wind = parsed_json['current_observation']['windchill_f'];
+
+     document.getElementById('currentTemp').innerHTML =  temp_f.toFixed(0) + "°";
+     document.getElementById('current_conditions').innerHTML =  weather;
+     document.getElementById('cityDisplay').innerHTML = location + ", " + state;
+     document.getElementById('add1').innerHTML = "The windchill is " + wind;
+     document.getElementById('add2').innerHTML = "The temperature feels like " + feelslike_f + "°";
+     document.getElementById('add3').innerHTML = "The precipitation for today is " + precip + "in";
+     document.getElementById('summary').innerHTML = "It is going to be a great day!";
+     }
+     });
+   });
+   </script>
 
     <script src="jquery-3.x.min.js"></script>
 
@@ -36,6 +64,38 @@
         </nav>
         <main class="main">
             <h1 style="text-align:center" class="main-title">JSON Parse</h1>
+
+           </head>
+           <body>
+             <div id="wrapper">
+               <header id="page-header">
+                 <h1>Weather Center</h1>
+           <h2 class="tagline">Know your weather</h2>
+               </header>
+               <main id="page-main">
+                 <section class="weather-container">
+                   <div id="cover">
+                     <div id="status">Loading...</div>
+                   </div>
+                   <h1 id="cityDisplay"></h1>
+                   <h2>Current Conditions</h2>
+                   <h3 id="current_conditions"></h3>
+                     <h4 id="currentTemp"></h4>
+                     <h4 id="summary"></h4>
+                     <h4 id="add1"></h4>
+                     <h4 id="add2"></h4>
+                     <h4 id="add3"></h4>
+                 </section>
+               </main>
+               <footer id="page-footer">
+                 <ul class="flexlist">
+             <li>Weather Center 2010 -2017</li>
+             <li><img src="/jsonweather/images/wulogo_rev.png" alt="Weatherunderground logo" title="All weather data provided by WeatherUnderground.com"></li>
+           </ul>
+                 <small>Last updated: 2 seconds ago</small>
+               </footer>
+               <script src="/jsonweather/scripts/jquery-2.2.0.min.js"></script>
+               <script src="/jsonweather/scripts/remote_wu.js"></script>
         </main>
         <footer class="page-footer">
             <ul>
