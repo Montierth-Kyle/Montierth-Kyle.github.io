@@ -1,0 +1,25 @@
+
+body {
+    background-image: url(eight-ball.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+    background-color: grey;
+}
+
+h1 {
+    font-family: fantasy;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px black;
+}
+
+input {
+    text-align: center;
+}
+
+#output {
+    padding-top: 125px;
+    color: white;
+}
