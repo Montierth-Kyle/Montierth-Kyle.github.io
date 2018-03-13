@@ -6,7 +6,7 @@
 	<title>Ogden, UT</title>
 	<meta name="viewport" content="width=device-width">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="stylesheet" href="css/weather_style.css" type="text/css">
+	<link rel="stylesheet" href="/css/weather_style.css" type="text/css">
     <script src="/jsonweather/scripts/remote_wu.js"></script>
     <script src="/jsonweather/scripts/jquery-3.x.min.js"></script>
     <script src="/jsonweather/scripts/weather.json"></script>
@@ -40,10 +40,10 @@ jQuery(document).ready(function($) {
 <body>
 	<div id="wrapper">
 		<header id="page-header">
-			<?php include '_header.php'; ?>
+			<?php include '/modules/_header.php'; ?>
 		</header>
 		<nav id="page-nav">
-			<?php include '_navigation.php'; ?>
+			<?php include '/modules/_navigation.php'; ?>
 		</nav>
 		<main id="page-main">
 			<section class="weather-container">
@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 			</section>
 		</main>
 		<footer id="page-footer">
-			<?  php include '_footer.php';  ?>
+			<?  php include '/modules/_footer.php';  ?>
 			<small>Last updated: <?php echo date('j F, Y', getlastmod()); ?></small>
 		</footer>
 		<script src="/jsonweather/scripts/jquery-2.2.0.min.js"></script>
