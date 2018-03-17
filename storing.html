@@ -21,20 +21,21 @@
   					<li><a href="loops.html">Loops</a></li>
 
   					<li><a href="object.html">Object Creation</a></li>
-
   					<li><a href="string.html">JSON Parse/External API (AJAX)</a></li>
   					<li><a href="storing.html">Local Storage API</a></li>
-            <li><a href="dommanipulate.html">DOM Manipulation</a></li>
-  					<li><a href="cssmanipulate.html">Manipulating CSS</a></li>
-  					<li><a href="csstrans.html">Creating CSS3 Transitions</a></li>
-  					<li><a href="jsevents.html">Standard JavaScript</a></li>
+  					<li><a href="dommanipulate.html">DOM Manipulation/CSS Trigger/CSS Manipulate</a></li>
   					<li><a href="tags.html">HTML5 Tags</a></li>
-  					<li><a href="custom.html">Triggering CSS3 Transitions</a></li>
 
   				</ul>
         </nav>
         <main class="main">
             <h1 style="text-align:center" class="main-title">Local Storage API</h1>
+            <h2 style="text-align:center">Cars</h2>
+            <ul>
+	            <li>
+					<h3 style="text-align:center" id="cars"></h3>
+	            </li>
+            </ul>
         </main>
         <footer class="page-footer">
             <ul>
@@ -63,6 +64,23 @@
             } // end if
         } // end of the search for a match
     } // end of if !==
+    var cars =
+[{make: 'Ford', model: 'Raptor'},
+ 
+{make: 'Chevy', model: 'Silverado'},
+
+ {make: 'GMC', model: 'Sierra'},
+ 
+{make: 'Bugatti', model: 'Veyron'},
+ {make: 'Mclaren', model: 'P1'},
+];
+ 
+ for (var i = 0; i < cars.length; i++) {
+   var car = cars[i];
+   document.getElementById('cars').innerHTML += 
+   car.make + ' : ' + car.model;
+};
+
 </script>
 
 </html>

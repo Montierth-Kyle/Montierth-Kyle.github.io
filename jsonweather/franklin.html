@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title> | Weather Center</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/weather_style.css" type="text/css" media="screen">
+	<script src="scripts/remote_wu.js"></script>
+    <script src="scripts/jquery-3.x.min.js"></script>
+    <script src="scripts/weather.json"></script>
+</head>
+
+	<body>
+		<div id="wrapper">
+			<header id="page-header">
+				<h1>Weather Center</h1>
+				<h2 class="tagline">Know your weather</h2>
+			</header>
+			<nav id="page-nav">
+				<ul class="flexlist">
+					<li><a href="current_weather.html" title="Weather Center Current Location">Current</a></li>
+					<li><a href="franklin.html.html" title="Weather Center - Franklin">Franklin</a></li>
+					<li><a href="../string.html" title="Weather Center Current Location">Main</a></li>
+				</ul>
+			</nav>
+			<main id="page-main">
+				<section class="weather-container">
+					<div id="cover">
+						<div id="status">Loading...</div>
+					</div>
+					<h1 id="City"></h1>
+					<h2>Current Conditions</h2>
+					<ul id="current_conditions">
+						<li id="currentTemp"></li>
+						<li id="summary"></li>
+
+					</ul>
+				</section>
+			</main>
+			<footer id="page-footer">
+			<ul class="flexlist">
+				<li>Weather Center 2010 - 2018</li>
+				<li><img src="images/wulogo_rev.png" alt="Weatherunderground logo" title="All weather data provided by WeatherUnderground.com"></li>
+				</ul>				
+	<small>Last updated: 2 Seconds Ago</small>
+			</footer>
+			<script>
+var weather = [
+		{
+		"id": 1,
+		"City": "Franklin",
+		"State" : "ID",
+		"High": 90,
+		"Low": 66,
+		"Precip": 0,
+		"Wind": "1 - 5",
+		"Direction": "Southwest",
+		"Summary": "Sunny",
+		"Longitude": -111.803757,
+		"Latitude": 42.011902,
+		"Hourly": {
+			"0": 67,
+			"1": 67,
+			"2": 69,
+			"3": 69,
+			"4": 69,
+			"5": 70,
+			"6": 69,
+			"7": 72,
+			"8": 74,
+			"9": 77,
+			"10": 79,
+			"11": 81,
+			"12": 84,
+			"13": 86,
+			"14": 88,
+			"15": 90,
+			"16": 90,
+			"17": 85,
+			"18": 83,
+			"19": 79,
+			"20": 74,
+			"21": 70,
+			"22": 68,
+			"23": 66
+		}
+		];
+};
+localStorage.setItem("weather", JSON.stringify(weather));
+	var City = localStorage.getItem("weather");
+	City = JSON.parse(City);
+  
+  document.getElementById('').innerHTML =  temp_f.toFixed(0) + "°";
+  document.getElementById('summary').innerHTML =  weather;
+  document.getElementById('City').innerHTML = City;
+  document.getElementById('add1').innerHTML = "The windchill is " + wind;
+  document.getElementById('add2').innerHTML = "The temperature feels like " + feelslike_f + "°";
+  document.getElementById('add3').innerHTML = "The precipitation for today is " + precip + "in";
+  document.getElementById('summary').innerHTML = "It is going to be a great day!";
+  };
+
+</script>
+			<script src="scripts/weather.json"></script>
+		</div>
+	</body>
+</html>

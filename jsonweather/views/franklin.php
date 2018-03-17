@@ -32,11 +32,11 @@
 				</section>
 			</main>
 			<footer id="page-footer">
-				<?php include '../modules/footer.php'; ?>
+				<?php include 'jsonweather/modules/footer.php'; ?>
 				<small>Last updated: <?php echo date('j F, Y', getlastmod()); ?></small>
 			</footer>
-			<script src="/jsonweather/scripts/jquery-2.2.0.min.js"></script>
-			<script src="/scripts/weather.json"></script>
+			<script src="jsonweather/scripts/jquery-2.2.0.min.js"></script>
+			<script src="scripts/weather.json"></script>
 		</div>
 	</body>
 </html>

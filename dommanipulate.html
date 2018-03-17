@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+	<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: black;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: blue;
+}
+</style>
 
 <head>
     <meta charset="utf-8">
@@ -21,20 +35,32 @@
   					<li><a href="loops.html">Loops</a></li>
 
   					<li><a href="object.html">Object Creation</a></li>
-
   					<li><a href="string.html">JSON Parse/External API (AJAX)</a></li>
   					<li><a href="storing.html">Local Storage API</a></li>
-            <li><a href="dommanipulate.html">DOM Manipulation</a></li>
-  					<li><a href="cssmanipulate.html">Manipulating CSS</a></li>
-  					<li><a href="csstrans.html">Creating CSS3 Transitions</a></li>
-  					<li><a href="jsevents.html">Standard JavaScript</a></li>
+  					<li><a href="dommanipulate.html">DOM Manipulation/CSS Trigger/CSS Manipulate</a></li>
   					<li><a href="tags.html">HTML5 Tags</a></li>
-  					<li><a href="custom.html">Triggering CSS3 Transitions</a></li>
 
   				</ul>
         </nav>
         <main class="main">
             <h1 style="text-align:center" class="main-title">DOM Manipulation</h1>
+            <h2 style="text-align:center"> Move mouse over words below</h2>
+            <p id="manipulate">Life is Great!</p>
+            <h1 id="id1">And so are you!</h1>
+
+			<button type="button" 
+			onclick="document.getElementById('id1').style.color = 'red'">
+			Click Me to change the font color above!</button>
+			
+			<p>
+			<button onclick="myMove()">Click me to move the blue box</button>
+			<p>The blue box below will move when touched on mobile device</p>
+			</p> 
+
+			<div ontouchstart="myMove()" id ="container">
+			<div id ="animate"></div>
+			</div>
+			
         </main>
         <footer class="page-footer">
             <ul>
@@ -63,6 +89,32 @@
             } // end if
         } // end of the search for a match
     } // end of if !==
+var x = document.getElementById("manipulate");
+if (x.addEventListener) {
+    x.addEventListener("mouseover", myFunction);
+} else if (x.attachEvent) {
+    x.attachEvent("onclick", myFunction);
+}
+
+function myFunction() {
+    document.getElementById("manipulate").innerHTML = "Yes it is!";
+}
+
+function myMove() {
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+
 </script>
 
 </html>
