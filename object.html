@@ -36,6 +36,8 @@
         </nav>
         <main class="main">
             <h1 style="text-align:center" class="main-title">Object Creation</h1>
+            <p id="obj"></p>
+            
         </main>
         <footer class="page-footer">
             <ul>
@@ -64,6 +66,19 @@
             } // end if
         } // end of the search for a match
     } // end of if !==
+    function Car(make, model, year, color) {
+    this.carMake = make;
+    this.carModel = model;
+    this.year = year;
+    this.carColor = color;
+	}
+	Car.prototype.name = function() {
+    return this.year + " " + this.carColor + " " + this.carMake + " " + this.carModel
+	};
+
+	var myCar = new Car("Ford", "Fusion", 2015, "Black");
+	document.getElementById("obj").innerHTML =
+	"My car is a " + myCar.name(); 
 </script>
 
 </html>

@@ -117,6 +117,9 @@ h1 {
 	position: relative;
     background-color: white;
 }
+.main ul {
+	list-style: none;
+}
 .main strong {
     font-weight: bolder;
 }
