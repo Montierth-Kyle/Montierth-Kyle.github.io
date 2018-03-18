@@ -19,7 +19,7 @@ function giveAnswer() {
             eightBall = 'My sources say no';
             break;
         case 5:
-            eightBall = 'Outlook not so good';
+            eightBall = 'Outlook is not so good';
             break;
         case 6:
             eightBall = 'Signs point to yes';
